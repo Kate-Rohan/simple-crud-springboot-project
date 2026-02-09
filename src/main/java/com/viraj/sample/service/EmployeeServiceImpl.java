@@ -31,11 +31,20 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public Employee getEmployee(Long employeeId) {
-        return employeeRepository.findById(employeeId).get();
+        // BUG: Calling get() on Optional without checking if present - can throw NoSuchElementException
+        Employee employee = employeeRepository.findById(employeeId).get();
+        String name = employee.getEmployeeName();
+        System.out.println("Employee name length: " + name.length()); // Potential NPE if name is null
+        return employee;
     }
 
     @Override
     public void deleteEmployee(Long employeeId) {
         employeeRepository.deleteById(employeeId);
+    }
+
+    @Override
+    public Employee getEmployeeByName(String name) {
+        return employeeRepository.findByEmployeeName(name).get();
     }
 }

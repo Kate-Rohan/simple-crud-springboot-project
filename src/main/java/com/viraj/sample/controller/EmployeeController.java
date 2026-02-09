@@ -44,4 +44,10 @@ public class EmployeeController {
     public void deleteEmployee(@PathVariable(name = "employeeId") Long employeeId) {
         employeeService.deleteEmployee(employeeId);
     }
+
+    @GetMapping("/getbyname/{employeeName}")
+    public Employee getEmployeeByName(@PathVariable(name = "employeeName") String employeeName) {
+        return employeeService.getEmployeeByName(employeeName);
+
+    }
 }
