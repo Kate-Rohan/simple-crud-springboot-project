@@ -47,6 +47,7 @@ public class EmployeeController {
 
     @GetMapping("/getbyname/{employeeName}")
     public Employee getEmployeeByName(@PathVariable(name = "employeeName") String employeeName) {
+        System.out.println("Made changes");
         return employeeService.getEmployeeByName(employeeName);
 
     }
