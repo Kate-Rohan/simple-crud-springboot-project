@@ -21,6 +21,7 @@ public class Employee {
     private String employeeDescription;
 
     public Employee() {
+        System.out.println("Fsdf");
     }
 
     public Employee(String employeeName, String employeeDescription) {
