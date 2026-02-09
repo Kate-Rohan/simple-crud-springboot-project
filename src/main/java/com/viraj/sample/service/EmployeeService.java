@@ -14,5 +14,6 @@ public interface EmployeeService {
     Employee getEmployeeByName(String name);
     Employee getEmployeeByName3(String name);
     Employee getEmployeeByName4(String name);
+    Employee getEmployeeByName5(String name);
 
 }
